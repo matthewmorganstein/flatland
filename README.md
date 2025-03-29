@@ -19,7 +19,9 @@ Trading Context: A reversal strategy that enters when price breaks the previous 
 Purpose: Signal generator for trade entries.
 
 Description: Scans 30m candles for:
+
 Buy Signal: Close < previous low AND (r_1 OR r_2 > Square Threshold).
+
 Sell Signal: Close > previous high AND (r_1 OR r_2 > Square Threshold).
 
 Technical Analysis: r_1 and r_2 are mocked momentum indicators (350-500 range), signaling reversal strength until RISE data is available.
