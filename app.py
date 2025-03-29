@@ -27,6 +27,7 @@ app.add_middleware(
 # Dependencies
 def get_dao():
     from pymongo import MongoClient
+    from settings import settings
     client = MongoClient(settings.MONGO_URI)
     db = client[settings.MONGODB_DB_NAME]
     dao = MongoDBDAO(db)
