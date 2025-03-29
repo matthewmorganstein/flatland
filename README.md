@@ -50,6 +50,18 @@ Description: Plots price and trade outcomes (green for wins, red for losses) in 
 
 Trading Context: Shows at a glance if the strategy’s winning or tanking.
 
+# Keyland Gatekeeper
+
+Purpose: Secures access with a single "free" role.
+
+Description: Validates API keys via 'X-API-Key' header against a MongoDB 'api_keys' collection.  For MVP, all valid keys grant free access to backtesting.
+
+Header: 'X-API-Key: flatland-free-test' (default key from '.env').
+
+Output: (if blocked): '{"detail": "Invadlis API key"}
+
+Trading Context: Keeps it open for testers -grab the key and backtest BTC.
+
 # Processors
 # Flatland Strategy Processor
 Purpose: Runs the backtest.
