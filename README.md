@@ -153,6 +153,37 @@ Run:
 bash
 python app.py
 
+# Testing the DB
+To verify it works:
+
+Setup: Connect to your MongoDB instance (local or cloud) via MONGO_URI in settings.py.
+
+Insert Sample Data:
+
+python
+
+from db import MongoDBDAO
+from pymongo import MongoClient
+from settings import settings
+
+client = MongoClient(settings.MONGO_URI)
+db = client[settings.MONGODB_DB_NAME]
+dao = MongoDBDAO(db)
+dao.init_db()
+sample_data = [
+    {"symbol": "BTC", "time_frame": "30m", "timestamp": "2025-03-28T00:00:00", "open": 60000.0, "high": 60500.0, "low": 59800.0, "close": 60250.0, "volume": 100.0, "r_1": 400.0, "r_2": 350.0}
+]
+dao.insert_many(sample_data)
+
+Query:
+
+python
+
+data = dao.get_data("BTC", "30m", datetime(2025, 3, 28), datetime(2025, 3, 29))
+print(data)
+
+This should store and retrieve the sample candle correctly, ready for backtesting.
+
 # Future Developments (Post-MVP)
 RISE Integration: Swap mock r_1/r_2 for real sentiment data.
 
