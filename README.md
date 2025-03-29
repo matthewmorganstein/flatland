@@ -1,4 +1,3 @@
-# flatland mvp
 ## FlatLand Trading Application documentation for the MVP (v1.0)
 # Overview
 
