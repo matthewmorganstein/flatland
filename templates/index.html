@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlatLand Plot</title>
+</head>
+<body>
+    <iframe id="plot" style="width: 100%; height: 100vh; border: none;"></iframe>
+    <script>
+        // Auto-load plot from /flatland-backtest
+        fetch("/flatland-backtest", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({symbol: "BTC", interval: "30m"})
+        }).then(response => response.text()).then(html => {
+            document.getElementById("plot").srcdoc = html;
+        });
+    </script>
+</body>
+</html>
