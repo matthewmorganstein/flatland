@@ -1,4 +1,4 @@
-## FlatLand Trading Application documentation for the MVP (v1.0)
+## FlatLand Trading Application documentation for the MVP (v0.1)
 # Overview
 
 FlatLand is a lightweight trading tool designed for crypto enthusiasts who want to test reversal strategies on Bitcoin (BTC) without the fluff. Built for the solo developer behind LineLand, this MVP backtests the last 15 trades on 30-minute candles, using price data from Twelve Data and mock sentiment indicators (r_1, r_2) until RISE (Real-time Index for Sentiment and Engagement) integration is live. It spits out clear metrics—win rate, profit factor, total profit—and a Plotly chart to see if the strategy holds water. Think of it as a quick, no-nonsense way to spot BTC momentum pivots and decide “worth it or not?” before risking real cash.
@@ -200,9 +200,7 @@ RISE Integration: Swap mock r_1/r_2 for real sentiment data.
 
 Real-Time Signals: Add WebSocket endpoint /realtime-signals.
 
-Multi-Symbol: Expand beyond BTC (e.g., ETH).
-
 Threshold Optimization: Introduce ZTestThresholdOptimizationProcessor.
 
 # Conclusion
-FlatLand v1.0 is a stripped-down, focused tool for BTC reversal backtesting. It’s quick, visual, and gives crypto traders the raw data they need to act. 
+FlatLand v0.1 is a stripped-down, focused tool for BTC reversal backtesting. It’s quick, visual, and gives crypto traders the raw data they need to act. 
